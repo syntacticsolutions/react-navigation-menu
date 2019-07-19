@@ -32,7 +32,7 @@ class Toolbar extends Component {
                             <li
                                 onMouseEnter={ () => { this.set('hoverIndex', index) } }
                                 onMouseLeave={ () => { this.set('hoverIndex', -1) } }
-                                style={{ background: hoverIndex === index ? (background || '#333') : (hoverBackground || '#999') }}
+                                style={{ background: hoverIndex !== index ? (background || '#333') : (hoverBackground || '#999') }}
                             >
                                 <Link
                                     to={link.path}
