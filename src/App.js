@@ -1,26 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Toolbar from './components/Toolbar'
+import Contact from './components/Contact'
+import { Router } from '@reach/router'
 import './App.css';
+import './assets/scss/base.scss'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      navLinks: [
+        {
+          text: 'Contact',
+          path: '/contact',
+          icon: 'ion-ios-megaphone'
+        }
+        // {
+        //   text: 'About',
+        //   path: '/about',
+        //   icon: 'ion-ios-business'
+        // },
+        // {
+        //   text: 'Blog',
+        //   path: '/blog',
+        //   icon: 'ion-ios-bonfire'
+        // },
+        // {
+        //   text: 'Portfolio',
+        //   path: '/portfolio',
+        //   icon: 'ion-ios-briefcase'
+        // }
+      ]
+    }
+  }
+
+  render () {
+    let { navLinks } = this.state
+    return (
+      <div className="App">
+          <Toolbar
+            navLinks={ navLinks }
+            imagePath={require('./logo.svg')}
+          ></Toolbar>
+          <Router>
+            <Contact path="/contact" />
+          </Router>
+      </div>
+    );
+  }
 }
 
 export default App;
