@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@reach/router": "^1.2.1",
+    "lodash": "^4.17.15",
     "node-sass": "^4.12.0"
   }
 }
