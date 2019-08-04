@@ -1,65 +1,86 @@
+nav.responsive-toolbar {
+    background: #333333;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    box-shadow: 2px 0px 2px #ccc;
 
-    nav.responsive-toolbar {
-        height: 60px;
-        width: 100%;
-        box-shadow: 2px 2px 2px #CCC;
-        ul {
-            display: flex;
-            height: 100%;
-            align-items: center;
+    ul {
+        background: #333333;
+        display: flex;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        padding-inline-start: 0;
+        height: 100%;
+        align-items: center;
+        box-shadow: 2px 2px 2px #ccc;
+
+        figure {
             margin-block-start: 0;
             margin-block-end: 0;
-            padding-inline-start: 0;
-            box-shadow: 2px 2px 2px #CCC;
+            margin-inline-start: 10px;
+            margin-inline-end: 0;
+            cursor: pointer;
+        }
+
+        li {
+            list-style-type: none;
+            padding: 10px 20px;
+
+            .active {
+                background: #999;
+            }
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+
+        i {
+            margin-right: 5px;
+            font-size: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 759px) {
+    nav.responsive-toolbar {
+        ul {
+            height: 100%;
+            width: 300px;
+            left: -240px;
+            position: fixed;
+            top: 60px;
+            flex-direction: column;
+            transition: 300ms ease all;
+
+            &.active {
+                left: 0px;
+            }
+
             figure {
-                cursor: pointer;
-                margin-right: 10px;
-            }
-            a {
-                text-decoration: none;
-                display: flex;
-                flex-direction: row-reverse;
-                align-items: center;
-            }
-            i {
-                margin-right: 10px;
-                font-size: 22px;
-            }
-            li {
-                list-style-type: none;
-                padding: 10px 20px;
-            }
-        }
-    }
-    @media screen and (max-width: 759px) {
-        nav.responsive-toolbar {
-            ul {
+                margin-inline-start: 2px;
                 position: fixed;
-                width: 300px;
-                flex-direction: column;
-                left: -240px;
-                transition: 300ms ease all;
-                top: 60px;
-                &.active {
-                    left: 0px;
-                }
-                figure {
-                    position: fixed;
-                    z-index: 1;
-                    top: 10px;
-                    left: 2px;
-                }
-                li {
-                    width: 100%;
-                    padding-left: 0;
-                    padding-right: 0;
-                }
-                a {
-                    flex-direction: row;
-                    margin-left: 20px;
-                    justify-content: space-between;
-                    margin-right: 13px;
-                }
+                left: 9px;
+                top: 10px;
+            }
+
+            li {
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            a {
+                flex-direction: row;
+                justify-content: space-between;
+                margin-left: 20px;
+                margin-right: 16px;
             }
         }
     }
+}
