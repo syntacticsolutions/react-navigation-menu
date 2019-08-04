@@ -1,5 +1,5 @@
 
-    nav {
+    nav.responsive-toolbar {
         height: 60px;
         width: 100%;
         box-shadow: 2px 2px 2px #CCC;
@@ -32,9 +32,9 @@
         }
     }
     @media screen and (max-width: 759px) {
-        nav {
+        nav.responsive-toolbar {
             ul {
-                position: absolute;
+                position: fixed;
                 width: 300px;
                 flex-direction: column;
                 left: -240px;
