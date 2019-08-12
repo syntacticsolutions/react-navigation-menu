@@ -5,6 +5,10 @@ nav.responsive-toolbar {
     position: fixed;
     box-shadow: 2px 0px 2px #ccc;
 
+    & ~ * {
+        padding-top: 60px;
+    }
+
     ul {
         background: #333333;
         display: flex;
